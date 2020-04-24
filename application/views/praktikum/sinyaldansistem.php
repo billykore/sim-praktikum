@@ -22,6 +22,7 @@
 					<th scope="col">Hari - Tanggal</th>
 					<th scope="col">Waktu</th>
 					<th scope="col">Modul</th>
+					<th scope="col">Aksi</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -30,6 +31,10 @@
 						<th scope="row"><?= $tampilJadwal[$i]['hari']; ?></th>
 						<td><?= $tampilJadwal[$i]['waktu']; ?></td>
 						<td><?= $tampilJadwal[$i]['modul']; ?></td>
+						<td>
+							<a href="<?= base_url('praktikum/ubahjadwal'); ?>" class="btn btn-info badge mr-1">ubah</a>
+							<a href="#" class="btn btn-danger badge">hapus</a>
+						</td>
 					</tr>
 				<?php endfor; ?>
 			</tbody>

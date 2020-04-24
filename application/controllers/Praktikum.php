@@ -87,4 +87,25 @@ class Praktikum extends CI_Controller
 			redirect('praktikum/sinyaldansistem');
 		}
 	}
+
+	public function ubahJadwal()
+	{
+		$data['judul'] = 'Praktikum - Ubah Jadwal';
+		$data['user'] = $this->Praktikum_model->getUser();
+		$data['aturJadwal'] = [
+			'hari' => $this->Praktikum_model->aturJadwalHari(),
+			'waktu' => $this->Praktikum_model->aturJadwalWaktu(),
+			'modul' => $this->Praktikum_model->aturJadwalModul()
+		];
+
+		if (!isset($_POST['atur'])) {
+			$this->load->view('templates/header', $data);
+			$this->load->view('praktikum/ubahjadwal', $data);
+			$this->load->view('templates/footer');
+		} else {
+			$this->Praktikum_model->ubahJadwal();
+			$this->session->set_flashdata('flash', 'diubah');
+			redirect('praktikum/sinyaldansistem');
+		}
+	}
 }
