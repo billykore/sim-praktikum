@@ -24,7 +24,7 @@
 	</button>
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav">
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('user'); ?>">Home</a>
 			</li>
 			<li class="nav-item">
@@ -32,6 +32,9 @@
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="<?= base_url('tugasakhir'); ?>">Tugas Akhir</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="<?= base_url('kerjapraktek'); ?>">Kerja Praktek</a>
 			</li>
 		</ul>
 		<div class="nav-link ml-auto"><?= $user['username']; ?></div>

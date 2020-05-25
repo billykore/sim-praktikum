@@ -1,6 +1,7 @@
 <div class="container">
 	<h1 class="text-center mb-5">Ubah Jadwal Praktikum</h1>
-	<form class="mx-auto" action="<?= base_url('praktikum/aturjadwal'); ?>" method="post" style="width: 600px">
+	<form class="mx-auto" action="" method="post" style="width: 600px">
+		<input type="hidden" name="id" value="<?= $user['id']; ?>">
 		<div class="form-group">
 			<label for="hari">Hari</label>
 			<select class="form-control" id="hari" name="hari">

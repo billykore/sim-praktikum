@@ -19,7 +19,7 @@
 		</div>
 		<div class="col-md-4 mt-2">
 			<h3># Info</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolores dolorum ex explicabo iure nam nostrum qui quia sed sunt.</p>
+
 		</div>
 	</div>
 </div>

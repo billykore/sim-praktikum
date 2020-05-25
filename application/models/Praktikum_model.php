@@ -53,4 +53,19 @@ class Praktikum_model extends CI_Model
 
 		return $this->db->get_where('sinyaldansistem', ['user_id' => $user_id])->result_array();
 	}
+
+	public function ubahJadwal()
+	{
+		$user_id = $this->db->get_where('students', ['username' => $this->session->userdata('username')])->row_array();
+
+		$data = [
+			'hari' => $this->input->post('hari', true),
+			'waktu' => $this->input->post('waktu', true),
+			'modul' => $this->input->post('modul', true),
+			'user_id' => $user_id['id'],
+		];
+
+		$this->db->where('id', $this->input->post('id'));
+		$this->db->update('sinyaldansistem', $data);
+	}
 }

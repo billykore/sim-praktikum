@@ -1,6 +1,14 @@
 <div class="container">
-	<h1 class="text-center mb-5">Atur Jadwal Praktikum</h1>
-	<form class="mx-auto" action="<?= base_url('praktikum/aturjadwal'); ?>" method="post" style="width: 600px">
+	<h1 class="text-center mb-5">Ambil Jadwal Praktikum</h1>
+	<form class="mx-auto" action="" method="post" style="width: 600px">
+		<div class="form-group">
+			<label for="modul">Modul</label>
+			<select class="form-control" id="modul" name="modul">
+				<?php foreach ($aturJadwal['modul'] as $i): ?>
+					<option value="<?= $i['modul'] ?>"><?= $i['modul']; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</div>
 		<div class="form-group">
 			<label for="hari">Hari</label>
 			<select class="form-control" id="hari" name="hari">
@@ -17,14 +25,6 @@
 				<?php endforeach; ?>
 			</select>
 		</div>
-		<div class="form-group">
-			<label for="modul">Modul</label>
-			<select class="form-control" id="modul" name="modul">
-				<?php foreach ($aturJadwal['modul'] as $i): ?>
-					<option value="<?= $i['modul']; ?>"><?= $i['modul']; ?></option>
-				<?php endforeach; ?>
-			</select>
-		</div>
-		<button class="btn btn-primary float-right" type="submit" name="atur">Atur Jadwal</button>
+		<button class="btn btn-primary float-right" type="submit" name="atur">Ambil Jadwal</button>
 	</form>
 </div>

@@ -25,6 +25,7 @@ class Praktikum extends CI_Controller
 		$data['judul'] = "Praktikum - Sinyal dan Sistem";
 		$data['user'] = $this->Praktikum_model->getUser();
 		$data['asisten'] = $this->Praktikum_model->getAsisten();
+		$data['modul'] = $this->Praktikum_model->aturJadwalModul();
 		$data['tampilJadwal'] = $this->Praktikum_model->tampilJadwal();
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar1_praktikum');
@@ -83,7 +84,7 @@ class Praktikum extends CI_Controller
 			$this->load->view('templates/footer');
 		} else {
 			$this->Praktikum_model->aturJadwal();
-			$this->session->set_flashdata('flash', 'diatur');
+			$this->session->set_flashdata('flash', 'diambil');
 			redirect('praktikum/sinyaldansistem');
 		}
 	}
@@ -97,8 +98,9 @@ class Praktikum extends CI_Controller
 			'waktu' => $this->Praktikum_model->aturJadwalWaktu(),
 			'modul' => $this->Praktikum_model->aturJadwalModul()
 		];
+		$data['tampilJadwal'] = $this->Praktikum_model->tampilJadwal();
 
-		if (!isset($_POST['atur'])) {
+		if (!isset($_POST['ubah'])) {
 			$this->load->view('templates/header', $data);
 			$this->load->view('praktikum/ubahjadwal', $data);
 			$this->load->view('templates/footer');

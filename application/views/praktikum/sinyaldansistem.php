@@ -7,7 +7,7 @@
 	</div>
 	<div id="jadwal">
 		<h3># Jadwal Praktikum</h3>
-		<a href="<?= base_url('praktikum/aturjadwal'); ?>" class="btn btn-primary ml-4 mb-3">Atur Jadwal Praktikum</a>
+		<a class="btn btn-primary mb-3 ml-3" href="<?= base_url('praktikum/aturjadwal'); ?>">Ambil Jadwal Praktikum</a>
 		<?php if ($this->session->flashdata('flash')): ?>
 			<div class="alert alert-success alert-dismissible fade show" role="alert">
 				Jadwal praktikum <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>.
@@ -16,27 +16,26 @@
 				</button>
 			</div>
 		<?php endif; ?>
-		<table class="table table-sm table-bordered">
+		<table class="table table-bordered">
 			<thead>
-				<tr>
-					<th scope="col">Hari - Tanggal</th>
-					<th scope="col">Waktu</th>
-					<th scope="col">Modul</th>
-					<th scope="col">Aksi</th>
-				</tr>
+			<tr>
+				<th scope="col">Modul</th>
+				<th scope="col">Hari - Tanggal</th>
+				<th scope="col">Waktu</th>
+				<th scope="col">Aksi</th>
+			</tr>
 			</thead>
 			<tbody>
-				<?php for ($i = 0; $i < count($tampilJadwal); $i++): ?>
-					<tr>
-						<th scope="row"><?= $tampilJadwal[$i]['hari']; ?></th>
-						<td><?= $tampilJadwal[$i]['waktu']; ?></td>
-						<td><?= $tampilJadwal[$i]['modul']; ?></td>
-						<td>
-							<a href="<?= base_url('praktikum/ubahjadwal'); ?>" class="btn btn-info badge mr-1">ubah</a>
-							<a href="#" class="btn btn-danger badge">hapus</a>
-						</td>
-					</tr>
-				<?php endfor; ?>
+			<?php for ($i = 0; $i < count($tampilJadwal); $i++): ?>
+				<tr>
+					<th scope="row"><?= $tampilJadwal[$i]['modul']; ?></th>
+					<td><?= $tampilJadwal[$i]['hari']; ?></td>
+					<td><?= $tampilJadwal[$i]['waktu']; ?></td>
+					<td>
+						<a href="<?= base_url('praktikum/ubahjadwal'); ?>" class="btn btn-success badge badge-success">ubah</a>
+					</td>
+				</tr>
+			<?php endfor; ?>
 			</tbody>
 		</table>
 	</div>

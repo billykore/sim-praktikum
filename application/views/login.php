@@ -37,7 +37,7 @@
 		<?php if ($this->session->flashdata('logout')): ?>
 			<div class="alert alert-success font-weight-bold" role="alert"><?= $this->session->flashdata('logout'); ?></div>
 		<?php endif; ?>
-    <form method="post" action="<?= base_url('/'); ?>">
+    <form method="post" action="">
       <div class="form-group">
         <input type="text" class="form-control form-control-user rounded-0" id="username" name="username" placeholder="Username" value="<?= set_value('username'); ?>">
 				<?= form_error('username', '<small class="text-danger">', '</small>'); ?>
