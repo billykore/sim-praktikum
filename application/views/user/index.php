@@ -19,7 +19,7 @@
 		</div>
 		<div class="col-md-4 mt-2">
 			<h3># Info</h3>
-
+			<p>Selamat datang di SIM Praktikum Teknik Sistem Pengaturan :)</p>
 		</div>
 	</div>
 </div>
